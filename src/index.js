@@ -5,12 +5,14 @@ import {Provider} from 'react-redux'
 import thunk from 'redux-thunk'
 import App from './components/App'
 import rootReducer from './reducers'
-import api from './middleware/FilmsApi'
+import {loadFilms} from "./actions";
 
 const store = createStore(
     rootReducer,
-    applyMiddleware(thunk, api),
+    applyMiddleware(thunk),
 );
+store.dispatch(loadFilms());
+
 
 render(
     <Provider store={store}>

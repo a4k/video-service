@@ -1,12 +1,12 @@
 import _ from 'lodash';
-import CONFIG from '../../config/';
+import {API} from '../config/api';
 
 class ApiV3Client {
     baseUrl;
     userAgent;
 
     constructor(options) {
-        this.baseUrl = CONFIG.API.URL;
+        this.baseUrl = API.URL;
         this.userAgent = 'Content';
     }
 

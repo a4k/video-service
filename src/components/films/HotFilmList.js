@@ -23,7 +23,10 @@ const HotFilmList = ({films}) => {
 };
 
 HotFilmList.propTypes = {
-    films: PropTypes.array.isRequired
+    films: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        title: PropTypes.string.isRequired,
+    })).isRequired,
 };
 
 export default HotFilmList;
