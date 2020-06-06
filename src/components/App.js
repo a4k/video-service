@@ -1,12 +1,10 @@
 import React from 'react'
-import Footer from './Footer'
-import AddTodo from '../containers/AddTodo'
-import VisibleTodoList from '../containers/VisibleTodoList'
+import Footer from './common/Footer'
 
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import HomePage from "./home/HomePage";
 import Header from "./common/Header";
 import FilmsPage from "./films/FilmsPage";
+import TVPage from "./tv/TVPage";
 
 class App extends React.Component {
     render() {
@@ -15,20 +13,17 @@ class App extends React.Component {
                 <div>
                     <Header/>
                     <Switch>
-                        <Route path="/about">
-                            <div>
-                                <AddTodo/>
-                                <VisibleTodoList/>
-                                <Footer/>
-                            </div>
+                        <Route path="/tv">
+                            <TVPage {...this.props}/>
                         </Route>
                         <Route path="/films">
                             <FilmsPage {...this.props}/>
                         </Route>
                         <Route path="/">
-                            <HomePage/>
+                            <FilmsPage {...this.props}/>
                         </Route>
                     </Switch>
+                    <Footer/>
                 </div>
             </Router>
         );

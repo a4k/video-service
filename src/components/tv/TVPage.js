@@ -1,10 +1,9 @@
 import React from "react";
 import {Switch, Route, Link, withRouter} from "react-router-dom";
-import FilmDetailPage from "./FilmDetailPage";
-import HotFilmsContainer from "../../containers/HotFilmsContainer";
-import CategoryContainer from "../../containers/CategoryContainer";
+import TVDetailPage from "./TVDetailPage";
+import TVContainer from "../../containers/TVContainer";
 
-class FilmsPage extends React.Component {
+class TVPage extends React.Component {
     render() {
         let match = this.props.match;
 
@@ -24,12 +23,11 @@ class FilmsPage extends React.Component {
                 </ul>
 
                 <Switch>
-                    <Route path={`${match.path}/:filmId`}>
-                        <FilmDetailPage/>
+                    <Route path={`${match.path}/:tvId`}>
+                        <TVDetailPage/>
                     </Route>
                     <Route path={match.path}>
-                        <HotFilmsContainer />
-                        {/*<CategoryContainer />*/}
+                        <TVContainer />
                     </Route>
                 </Switch>
             </div>
@@ -37,4 +35,4 @@ class FilmsPage extends React.Component {
     }
 }
 
-export default withRouter(FilmsPage);
+export default withRouter(TVPage);

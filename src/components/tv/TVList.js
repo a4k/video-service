@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import CategoryFilmListRow from './CategoryFilmListRow';
+import TVListRow from './TVListRow';
 
-const CategoryFilmList = ({categories}) => {
+const TVList = ({tv}) => {
     return (
         <div>
             <h1>Жанры</h1>
@@ -13,8 +13,8 @@ const CategoryFilmList = ({categories}) => {
                 </tr>
                 </thead>
                 <tbody>
-                {categories.map(film =>
-                    <CategoryFilmListRow key={film.id} film={film} />
+                {tv.map(tv_item =>
+                    <TVListRow key={tv_item.id} tv_item={tv_item} />
                 )}
                 </tbody>
             </table>
@@ -22,8 +22,8 @@ const CategoryFilmList = ({categories}) => {
     );
 };
 
-CategoryFilmList.propTypes = {
-    categories: PropTypes.array.isRequired
+TVList.propTypes = {
+    tv: PropTypes.array.isRequired
 };
 
-export default CategoryFilmList;
+export default TVList;

@@ -1,12 +1,12 @@
 import {connect} from 'react-redux'
-import HotFilmList from '../components/films/HotFilmList'
+import CategoryList from '../components/categories/CategoryList'
 
 const getVisibleFilms = (films, filter) => {
     return films
 }
 
 const mapStateToProps = state => ({
-    films: getVisibleFilms(state.films, state.visibilityFilter)
+    categories: getVisibleFilms(state.categories, state.visibilityFilter)
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -16,4 +16,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(HotFilmList)
+)(CategoryList)

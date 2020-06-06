@@ -1,10 +1,9 @@
 import React from "react";
 import {Switch, Route, Link, withRouter} from "react-router-dom";
-import FilmDetailPage from "./FilmDetailPage";
-import HotFilmsContainer from "../../containers/HotFilmsContainer";
-import CategoryContainer from "../../containers/CategoryContainer";
+import VisibleCategoryFilmList from "../../containers/CategoryContainer";
+import CategoryDetailPage from "./CategoryDetailPage";
 
-class FilmsPage extends React.Component {
+class CategoriesPage extends React.Component {
     render() {
         let match = this.props.match;
 
@@ -25,11 +24,10 @@ class FilmsPage extends React.Component {
 
                 <Switch>
                     <Route path={`${match.path}/:filmId`}>
-                        <FilmDetailPage/>
+                        <CategoryDetailPage/>
                     </Route>
                     <Route path={match.path}>
-                        <HotFilmsContainer />
-                        {/*<CategoryContainer />*/}
+                        <VisibleCategoryFilmList />
                     </Route>
                 </Switch>
             </div>
@@ -37,4 +35,4 @@ class FilmsPage extends React.Component {
     }
 }
 
-export default withRouter(FilmsPage);
+export default withRouter(CategoriesPage);

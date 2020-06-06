@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 const HotFilmListRow = ({film}) => {
     return (
         <tr>
-            <td><Link to={'/films/' + film.id}>{film.name}</Link></td>
+            <td><Link to={'/films/' + film.id}>{film.title}</Link></td>
         </tr>
     );
 };

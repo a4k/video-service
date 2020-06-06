@@ -1,22 +1,16 @@
-let nextTodoId = 0
-export const addTodo = text => ({
-  type: 'ADD_TODO',
-  id: nextTodoId++,
-  text
-})
+import * as ActionTypes from '../constants/ActionTypes'
+import { filmApi } from '../middleware/FilmsApi'
 
-export const setVisibilityFilter = filter => ({
-  type: 'SET_VISIBILITY_FILTER',
-  filter
-})
+export function loadFilmsSuccess(films) {
+  return {type: ActionTypes.LOAD_FILMS_SUCCESS, films};
+}
 
-export const toggleTodo = id => ({
-  type: 'TOGGLE_TODO',
-  id
-})
-
-export const VisibilityFilters = {
-  SHOW_ALL: 'SHOW_ALL',
-  SHOW_COMPLETED: 'SHOW_COMPLETED',
-  SHOW_ACTIVE: 'SHOW_ACTIVE'
+export function loadFilms() {
+  return function(dispatch) {
+    return filmApi.getFilms().then(cats => {
+      dispatch(loadFilmsSuccess(cats));
+    }).catch(error => {
+      throw(error);
+    });
+  };
 }
