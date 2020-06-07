@@ -13,8 +13,8 @@ const TVList = ({tv}) => {
                 </tr>
                 </thead>
                 <tbody>
-                {tv.map(tv_item =>
-                    <TVListRow key={tv_item.id} tv_item={tv_item} />
+                {tv.map(item =>
+                    <TVListRow key={item.id} item={item} />
                 )}
                 </tbody>
             </table>

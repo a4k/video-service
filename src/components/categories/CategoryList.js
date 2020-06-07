@@ -23,7 +23,10 @@ const CategoryList = ({categories}) => {
 };
 
 CategoryList.propTypes = {
-    categories: PropTypes.array.isRequired
+    categories: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        title: PropTypes.string.isRequired,
+    })).isRequired,
 };
 
 export default CategoryList;

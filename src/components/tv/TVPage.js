@@ -1,6 +1,5 @@
 import React from "react";
-import {Switch, Route, Link, withRouter} from "react-router-dom";
-import TVDetailPage from "./TVDetailPage";
+import {Switch, Route, Link, withRouter, NavLink} from "react-router-dom";
 import TVContainer from "../../containers/TVContainer";
 
 class TVPage extends React.Component {
@@ -9,23 +8,11 @@ class TVPage extends React.Component {
 
         return (
             <div>
-                <h2>Topics</h2>
-
-                <ul>
-                    <li>
-                        <Link to={`${match.url}/components`}>Components</Link>
-                    </li>
-                    <li>
-                        <Link to={`${match.url}/props-v-state`}>
-                            Props v. State
-                        </Link>
-                    </li>
-                </ul>
-
+                <div className={'tabs'}>
+                    <NavLink to={'/films'}>{'Фильмы'}</NavLink>
+                    <NavLink to={'/tv'} isActive={() => {return true}}>{'Телеканалы'}</NavLink>
+                </div>
                 <Switch>
-                    <Route path={`${match.path}/:tvId`}>
-                        <TVDetailPage/>
-                    </Route>
                     <Route path={match.path}>
                         <TVContainer />
                     </Route>

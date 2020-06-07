@@ -1,16 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import TVScheduleList from "./TVScheduleList";
 
-const TVListRow = ({tv_item}) => {
+const TVListRow = ({item}) => {
     return (
-        <tr>
-            <td>{tv_item.name}</td>
-        </tr>
+        <div>
+            <div className="title">{item.title}</div>
+            <div className="schedule">
+                <TVScheduleList schedule={item.schedule} />
+            </div>
+        </div>
     );
 };
 
 TVListRow.propTypes = {
-    tv_item: PropTypes.object.isRequired
+    item: PropTypes.object.isRequired
 };
 
 export default TVListRow;

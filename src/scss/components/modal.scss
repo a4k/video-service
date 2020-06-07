@@ -1,0 +1,266 @@
+.arcticmodal-overlay,
+.arcticmodal-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1500;
+}
+
+.arcticmodal-container {
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-collapse: collapse;
+}
+
+*:first-child + html .arcticmodal-container {
+  height: 100%
+}
+
+.arcticmodal-container_i {
+  height: 100%;
+  margin: 0 auto;
+}
+
+.arcticmodal-container_i2 {
+  padding: 24px;
+  margin: 0;
+  border: 0;
+  vertical-align: middle;
+}
+
+.arcticmodal-error {
+  padding: 20px;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+}
+
+.arcticmodal-loading {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  background: #000;
+}
+
+
+
+.box-modal {
+  position: relative;
+  width: 528px;
+  padding: 0;
+  background: #fff;
+  box-sizing: border-box;
+
+}
+
+.box-modal_close {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  outline: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  transition: opacity .3s ease;
+  .icon {
+    &__wrapper {
+      float: right;
+    }
+  }
+}
+
+.box-modal_close:hover {
+  color: #666;
+}
+
+.modal-success {
+  text-align: center;
+  height: calc(100vh - 120px);
+  &__wrapper {
+    height: 100%;
+  }
+  &__info {
+    padding: 0 27px;
+  }
+  .heading {
+    text-align: center;
+  }
+  .text {
+    position: relative;
+  }
+  .icon {
+    &__wrapper {
+      margin-bottom: 35px;
+    }
+  }
+}
+
+// Свайп модальное окно контактов
+.box-contact {
+  width: 100%;
+  height: 100%;
+  background: $white;
+  &__container {
+    overflow: hidden;
+  }
+  &__wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: none;
+    &.showed {
+      display: block;
+    }
+  }
+  &__close {
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    z-index: 500;
+  }
+  &__map {
+    width: 100%;
+    height: 100%;
+    background: $light-gray;
+  }
+  &__content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: $white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: all .3s ease;
+    &.no-animation {
+      transition: none;
+    }
+    .slide-roll {
+      padding: 12px 0 24px;
+      .slide-input {
+        width: 27px;
+        height: 5px;
+        border-radius: 2.5px;
+        background-color: $wave-gray;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    .slide-content {
+      padding-bottom: 25px;
+      .contact {
+        &-about {
+          padding: 0 $xs-padding 16px;
+          border-bottom: 1px solid $light-gray;
+          margin-bottom: 16px;
+          .heading {
+            margin-bottom: 8px;
+            &__h5 {
+              line-height: 24px;
+
+            }
+          }
+          &__license {
+            font-size: $xs-font-small-size;
+            line-height: 24px;
+            color: $dark-gray;
+            margin-bottom: 6px;
+          }
+          &__city {
+            margin-bottom: 8px;
+            font-size: $xs-font-size;
+            line-height: 24px;
+          }
+          &__trace {
+            .icon {
+              &__wrapper {
+                flex-grow: 0;
+                width: auto;
+                flex-basis: auto;
+                margin-right: 16px;
+              }
+            }
+            .trace-text {
+              a {
+                font-size: $xs-font-size;
+                line-height: normal;
+              }
+            }
+          }
+        }
+        // Услуги
+        &-service__list {
+          margin: 0 $xs-padding;
+        }
+        // Специалисты
+        &-doctor__list {
+          margin: 0 $xs-padding;
+          .items {
+            .item {
+              padding: 0 0 16px;
+              margin-bottom: 12px;
+              border-bottom: 1px solid $light-gray;
+              &__wrapper {
+                display: block;
+                &:last-child {
+                  .item {
+                    border-bottom: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+
+
+@media (max-width: $device-tablet) {
+  .arcticmodal-container_i {
+    width: 100%;
+  }
+  .arcticmodal-container_i2 {
+    padding: 0;
+  }
+  .box-modal {
+    width: 100%;
+    min-height: 100vh;
+    padding: 62px 0 0;
+  }
+
+  .modal {
+    &-form {
+      &__header {
+        padding: 0 $xs-padding;
+        border-bottom: 1px solid $light-gray;
+        &.nb {
+          border-bottom: none;
+        }
+        .heading {
+          margin-bottom: 25px;
+        }
+      }
+      &__body {
+        padding-top: 16px;
+        margin: 0 $xs-padding;
+        .text {
+          font-size: $xs-font-size;
+          letter-spacing: 0.3px;
+          line-height: normal;
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}

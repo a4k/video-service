@@ -26,45 +26,36 @@ class ApiV3Client {
 
         // Construct headers
         const headers = new Headers({
-            Accept: 'application/json',
+            'Accept': 'application/json',
             'Content-Type': 'application/json',
         });
 
-        // $FlowFixMe don't care much about this right now
-        const response = await fetch(this.baseUrl + (modifiedPath || path), {
+        var options = {
             method,
-            body,
             headers,
-            redirect: 'follow',
-            credentials: 'include',
+            body,
+            // mode: 'no-cors',
+        };
+        // $FlowFixMe don't care much about this right now
+        return fetch(this.baseUrl + (modifiedPath || path), options).then(response => {
+            return response.json();
+        }).catch(error => {
+            return error;
         });
-
-        if (response.status >= 200 && response.status < 300) {
-            let value = true;
-            try {
-                value = response.json();
-                return value;
-            } catch (e) {
-                return true;
-            }
-        }
-
-        // Handle failed responses
-        const error = {};
-        error.statusCode = response.status;
-        error.response = response;
-        throw error;
     };
 
     get(path, data, options) {
         return this.fetch(path, 'GET', data, options);
     }
+
     delete(path, data, options) {
         return this.fetch(path, 'DELETE', data, options);
     }
+
     post(path, data, options) {
         return this.fetch(path, 'POST', data, options);
     }
+
     constructQueryString(data) {
         return _.map(data, (v, k) => {
             return `${encodeURIComponent(k)}=${encodeURIComponent(v)}`;

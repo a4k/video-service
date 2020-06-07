@@ -1,0 +1,53 @@
+body, html {
+  width: 100%;
+  background: $gray;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+}
+body {
+  font: 400 14px/24px $base-font;
+  color: $black;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden
+}
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%
+}
+
+a, a:active, a:visited {
+  text-decoration: none;
+  color: $base-color;
+}
+
+a {
+  text-decoration: none;
+  color: $base-color;
+}
+
+
+.nobr {
+  white-space: nowrap;
+}
+
+.clearfix:after {
+  clear: both;
+  content: '';
+  display: table
+}
+
+select {
+  border: 1px solid #dedede;
+  display: inline-block;
+  padding: 8px;
+}
+.none {
+  display:none
+}
+
+.max-width {
+  max-width: 1080px;
+  margin: 0 auto;
+  position: relative;
+}

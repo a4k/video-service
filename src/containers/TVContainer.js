@@ -1,19 +1,48 @@
+import React from "react";
 import {connect} from 'react-redux'
-import TVList from "../components/tv/TVList";
+import {bindActionCreators} from 'redux';
+import TVList from '../components/tv/TVList'
+import PropTypes from "prop-types";
+import * as tvActions from "../actions/tvActions";
 
-const getVisibleTV = (tv, filter) => {
-    return tv
+
+class TVContainer extends React.Component {
+    constructor(props, context) {
+        super(props, context);
+        this.state = {
+            tv: this.props.tv,
+        };
+    }
+    componentDidMount() {
+        this.props.actions.loadTV();
+    }
+    componentWillReceiveProps(nextProps) {
+        this.setState({tv: nextProps.tv});
+    }
+    render() {
+        return (
+            <TVList
+                tv={this.state.tv}/>
+        );
+    }
 }
 
-const mapStateToProps = state => ({
-    tv: getVisibleTV(state.tv, state.visibilityFilter)
-})
+TVContainer.propTypes = {
+    tv: PropTypes.array.isRequired,
+    actions: PropTypes.object.isRequired,
+};
 
-const mapDispatchToProps = dispatch => ({
-    // toggleTodo: id => dispatch(toggleTodo(id))
-})
+const mapStateToProps = (state) => {
+    const {tv} = state;
+    return {tv}
+};
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(tvActions, dispatch)
+    };
+}
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(TVList)
+)(TVContainer)

@@ -1,8 +1,9 @@
 import React from "react";
-import {Switch, Route, Link, withRouter} from "react-router-dom";
+import {Switch, Route, NavLink, withRouter} from "react-router-dom";
 import FilmDetailPage from "./FilmDetailPage";
 import HotFilmsContainer from "../../containers/HotFilmsContainer";
 import CategoryContainer from "../../containers/CategoryContainer";
+import PropTypes from "prop-types";
 
 class FilmsPage extends React.Component {
     render() {
@@ -10,31 +11,25 @@ class FilmsPage extends React.Component {
 
         return (
             <div>
-                <h2>Topics</h2>
-
-                <ul>
-                    <li>
-                        <Link to={`${match.url}/components`}>Components</Link>
-                    </li>
-                    <li>
-                        <Link to={`${match.url}/props-v-state`}>
-                            Props v. State
-                        </Link>
-                    </li>
-                </ul>
-
                 <Switch>
                     <Route path={`${match.path}/:filmId`}>
                         <FilmDetailPage/>
                     </Route>
                     <Route path={match.path}>
+                        <div className={'tabs'}>
+                            <NavLink to={'/films'} isActive={() => {return true}}>{'Фильмы'}</NavLink>
+                            <NavLink to={'/tv'}>{'Телеканалы'}</NavLink>
+                        </div>
                         <HotFilmsContainer />
-                        {/*<CategoryContainer />*/}
+                        <CategoryContainer />
                     </Route>
                 </Switch>
             </div>
         );
     }
 }
+FilmsPage.propTypes = {
+    tabs: PropTypes.object.isRequired,
+};
 
 export default withRouter(FilmsPage);

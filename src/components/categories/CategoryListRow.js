@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 const CategoryListRow = ({category}) => {
     return (
         <tr>
-            <td><Link to={'/categories/' + category.id}>{category.name}</Link></td>
+            <td><Link to={'/categories/' + category.id}>{category.title}</Link></td>
         </tr>
     );
 };
