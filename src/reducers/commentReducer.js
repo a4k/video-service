@@ -7,8 +7,8 @@ export default function commentReducer(state = initialState.comments, action) {
      return Object.assign([], state, action.comments);
     case ActionTypes.CREATE_COMMENT_SUCCESS:
       return [
-        ...state.filter(comment => comment.id !== action.comment.id),
-        Object.assign({}, action.comment)
+        Object.assign({}, action.comment),
+        ...state.filter(comment => comment.id !== action.comment.id)
       ];
     case ActionTypes.DELETE_COMMENT_SUCCESS: {
       const newState = Object.assign([], state);

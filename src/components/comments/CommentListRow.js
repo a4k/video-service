@@ -4,10 +4,14 @@ import $ from "jquery";
 
 class CommentListRow extends Component {
     render() {
-        let {comment} = this.props;
+        let {comment, userId} = this.props;
         let username = '-';
         if(comment.user.hasOwnProperty('name')) {
             username = comment.user.name;
+        }
+        let canDelete = false;
+        if(comment.user.id === userId) {
+            canDelete = true;
         }
         return (
             <div className="row comment">
@@ -17,7 +21,11 @@ class CommentListRow extends Component {
                     <div className="comment-body">{comment.content}</div>
                 </div>
                 <div className="col-sm-2">
-                    <div className="button-delete" onClick={() => this.props.onDelete(comment.id)}></div>
+                    {canDelete
+                    ? <div className="button-delete" onClick={() => this.props.onDelete(comment.id)}></div>
+                    : <div></div>
+                    }
+
                 </div>
             </div>
         );
@@ -27,6 +35,7 @@ class CommentListRow extends Component {
 CommentListRow.propTypes = {
     comment: PropTypes.object.isRequired,
     onDelete: PropTypes.func.isRequired,
+    userId: PropTypes.string.isRequired,
 };
 
 export default CommentListRow;

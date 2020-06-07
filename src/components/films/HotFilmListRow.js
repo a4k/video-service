@@ -14,13 +14,13 @@ class HotFilmListRow extends Component {
     render() {
         let {film} = this.props;
         return (
-            <div className="col-sm-3">
+            <div className="col-sm card__wrapper">
                 <div className="card">
                     <div className="card-img">
                         <img src={`/img/${film.image}`} className="card-img-top"/>
-                        <div className="card-img-overlay">
+                        <a href={`/films/${film.id}`} className="card-img-overlay">
                             <p>{film.content}</p>
-                        </div>
+                        </a>
                     </div>
                     <div className="card-body">
                         <h5 className="card-title"><a href={`/films/${film.id}`}>{film.title}</a></h5>

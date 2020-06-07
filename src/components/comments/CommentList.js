@@ -9,7 +9,7 @@ class CommentList extends Component {
             <div className={'comments'}>
                 <div className="comment-list">
                     {comments.map(comment =>
-                        <CommentListRow key={comment.id} onDelete={this.props.onDelete} comment={comment}/>
+                        <CommentListRow key={comment.id} userId={this.props.userId} onDelete={this.props.onDelete} comment={comment}/>
                     )}
                 </div>
             </div>
@@ -23,6 +23,7 @@ CommentList.propTypes = {
         content: PropTypes.string.isRequired,
     })).isRequired,
     onDelete: PropTypes.func.isRequired,
+    userId: PropTypes.string.isRequired,
 };
 
 export default CommentList;

@@ -28,7 +28,19 @@ a {
   color: $base-color;
 }
 
-
+::-webkit-scrollbar {
+  width: 8px;
+  &-track {
+    background: #F2F2F2;
+  }
+  &-thumb {
+    border-radius: 2px;
+    background: #BDBDBD;
+    &:hover {
+      background: #555;
+    }
+  }
+}
 .nobr {
   white-space: nowrap;
 }
@@ -99,6 +111,13 @@ header {
       padding-left: 32px;
     }
   }
+  .user {
+    &-btn {
+      width: 80px;
+      flex-basis: auto;
+      flex-grow: 0;
+    }
+  }
 
   .login-button {
     padding: 6px 32px;
@@ -167,6 +186,11 @@ header {
 }
 .hotfilms {
   .items {
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
     .card {
       &-img {
         &-overlay {
@@ -313,6 +337,10 @@ header {
     margin-bottom: 56px;
 
     .comment {
+      &-auth {
+        margin-bottom: 32px;
+        text-align: center;
+      }
       &-form {
         margin-bottom: 16px;
         &__text {
@@ -328,6 +356,7 @@ header {
           height: 110px;
           background: rgba(229, 38, 30, .15);
           color: $base-color;
+          resize: none;
         }
       }
       &-list {

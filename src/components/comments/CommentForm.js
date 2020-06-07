@@ -3,10 +3,6 @@ import TextInput from '../common/TextInput';
 import PropTypes from "prop-types";
 
 class CommentForm extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className={'comment-form'}>

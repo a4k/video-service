@@ -10,10 +10,12 @@ class HotFilmList extends Component {
                 <div className="heading">
                     <h4>🔥 Новинки</h4>
                 </div>
-                <div className="row items">
-                    {films.map(film =>
-                        <HotFilmListRow key={film.id} film={film}/>
-                    )}
+                <div className="items__wrapper">
+                    <div className="row items">
+                        {films.map(film =>
+                            <HotFilmListRow key={film.id} film={film}/>
+                        )}
+                    </div>
                 </div>
             </div>
         );
