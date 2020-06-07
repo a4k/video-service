@@ -1,18 +1,9 @@
 $black: #000;
 $gray: #f6f7fa;
 $white: #fff;
-
-$base-color: #cf0079;
-$base-light-color: #D51075;
-$base-dark-color: #970058;
-$base-link-color: #CF0079;
-$base-font-size: 16px !default;
-$base-line-height: 24px !default;
-$base-round: 2px !default;
-$base-spacing-unit: 8px !default;
-
-$base-border-radius: 4px;
-
+$base-color: #E5261E;
+$base-hover-color: #CC221B;
+$default-color: #333333;
 
 $xs-padding: 16px;
 $xs-font-size: 16px;
@@ -20,22 +11,7 @@ $xs-font-small-size: 14px;
 $xs-border-radius: 4px;
 
 
-$md-font-xs-size: 12px;
-$md-font-size: 14px;
-$md-font-md-size: 15px;
-$md-font-lg-size: 16px;
-$md-font-small-size: 10px;
-$md-letter-spacing: 0.304px;
-$md-line-height: 20px;
-
-
-$path-to-assets: '/assets';
-$path-to-icons: $path-to-assets + '/icons';
-$path-to-fonts: $path-to-assets + '/fonts';
-$path-to-img: $path-to-assets + '/img';
-
-
-$base-font: 'Proxima Nova Regular', Arial, Helvetica, sans-serif;
+$base-font: 'Rubik Regular', Arial, Helvetica, sans-serif;
 
 
 $device-mobile: 600px;

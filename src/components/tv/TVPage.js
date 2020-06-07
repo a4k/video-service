@@ -7,11 +7,15 @@ class TVPage extends React.Component {
         let match = this.props.match;
 
         return (
-            <div>
-                <div className={'tabs'}>
-                    <NavLink to={'/films'}>{'Фильмы'}</NavLink>
-                    <NavLink to={'/tv'} isActive={() => {return true}}>{'Телеканалы'}</NavLink>
-                </div>
+            <div className={'container'}>
+                <ul className="nav justify-content-center">
+                    <li className="nav-item">
+                        <a className="nav-link" href="/films">Фильмы</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link active" href="/tv">Телеканалы</a>
+                    </li>
+                </ul>
                 <Switch>
                     <Route path={match.path}>
                         <TVContainer />

@@ -4,4 +4,5 @@ export default {
   categories: [],
   tv: [],
   user: {},
+  comments: [],
 }

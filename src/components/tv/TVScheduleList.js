@@ -4,7 +4,7 @@ import TVScheduleListRow from "./TVScheduleListRow";
 
 const TVScheduleList = ({schedule}) => {
     return (
-        <div className="schedule-list">
+        <div className="schedule">
             {schedule.map(item =>
                 <TVScheduleListRow key={item.id} item={item} />
             )}

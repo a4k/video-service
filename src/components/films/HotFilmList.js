@@ -1,26 +1,24 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types'
 import HotFilmListRow from './HotFilmListRow';
 
-const HotFilmList = ({films}) => {
-    return (
-        <div>
-            <h1>Новинки</h1>
-            <table className="table">
-                <thead>
-                <tr>
-                    <th>Name</th>
-                </tr>
-                </thead>
-                <tbody>
-                {films.map(film =>
-                    <HotFilmListRow key={film.id} film={film} />
-                )}
-                </tbody>
-            </table>
-        </div>
-    );
-};
+class HotFilmList extends Component {
+    render() {
+        let {films} = this.props;
+        return (
+            <div className={'hotfilms'}>
+                <div className="heading">
+                    <h4>🔥 Новинки</h4>
+                </div>
+                <div className="row items">
+                    {films.map(film =>
+                        <HotFilmListRow key={film.id} film={film}/>
+                    )}
+                </div>
+            </div>
+        );
+    }
+}
 
 HotFilmList.propTypes = {
     films: PropTypes.arrayOf(PropTypes.shape({

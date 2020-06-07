@@ -4,20 +4,15 @@ import CategoryListRow from './CategoryListRow';
 
 const CategoryList = ({categories}) => {
     return (
-        <div>
-            <h1>Жанры</h1>
-            <table className="table">
-                <thead>
-                <tr>
-                    <th>Name</th>
-                </tr>
-                </thead>
-                <tbody>
+        <div className={'categories'}>
+            <div className="heading">
+                <h4>Жанры</h4>
+            </div>
+            <div className="row items">
                 {categories.map(category =>
                     <CategoryListRow key={category.id} category={category} />
                 )}
-                </tbody>
-            </table>
+            </div>
         </div>
     );
 };

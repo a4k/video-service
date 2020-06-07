@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types'
 
 const TVScheduleListRow = ({item}) => {
+    let activeClass = item.active ? 'active' : '';
     return (
-        <div>
-            <div className="time">{item.time}</div>
-            <div className="title">{item.title}</div>
+        <div className={`row schedule-row ${activeClass}`}>
+            <div className="col-sm schedule-time">
+                {item.time}
+            </div>
+            <div className="col-sm schedule-title">{item.title}</div>
         </div>
     );
 };

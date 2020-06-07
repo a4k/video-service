@@ -99,133 +99,6 @@
   }
 }
 
-// Свайп модальное окно контактов
-.box-contact {
-  width: 100%;
-  height: 100%;
-  background: $white;
-  &__container {
-    overflow: hidden;
-  }
-  &__wrapper {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    display: none;
-    &.showed {
-      display: block;
-    }
-  }
-  &__close {
-    position: absolute;
-    right: 14px;
-    top: 14px;
-    z-index: 500;
-  }
-  &__map {
-    width: 100%;
-    height: 100%;
-    background: $light-gray;
-  }
-  &__content {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background: $white;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    transition: all .3s ease;
-    &.no-animation {
-      transition: none;
-    }
-    .slide-roll {
-      padding: 12px 0 24px;
-      .slide-input {
-        width: 27px;
-        height: 5px;
-        border-radius: 2.5px;
-        background-color: $wave-gray;
-        display: block;
-        margin: 0 auto;
-      }
-    }
-    .slide-content {
-      padding-bottom: 25px;
-      .contact {
-        &-about {
-          padding: 0 $xs-padding 16px;
-          border-bottom: 1px solid $light-gray;
-          margin-bottom: 16px;
-          .heading {
-            margin-bottom: 8px;
-            &__h5 {
-              line-height: 24px;
-
-            }
-          }
-          &__license {
-            font-size: $xs-font-small-size;
-            line-height: 24px;
-            color: $dark-gray;
-            margin-bottom: 6px;
-          }
-          &__city {
-            margin-bottom: 8px;
-            font-size: $xs-font-size;
-            line-height: 24px;
-          }
-          &__trace {
-            .icon {
-              &__wrapper {
-                flex-grow: 0;
-                width: auto;
-                flex-basis: auto;
-                margin-right: 16px;
-              }
-            }
-            .trace-text {
-              a {
-                font-size: $xs-font-size;
-                line-height: normal;
-              }
-            }
-          }
-        }
-        // Услуги
-        &-service__list {
-          margin: 0 $xs-padding;
-        }
-        // Специалисты
-        &-doctor__list {
-          margin: 0 $xs-padding;
-          .items {
-            .item {
-              padding: 0 0 16px;
-              margin-bottom: 12px;
-              border-bottom: 1px solid $light-gray;
-              &__wrapper {
-                display: block;
-                &:last-child {
-                  .item {
-                    border-bottom: none;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-
-    }
-  }
-}
-
-
-
 @media (max-width: $device-tablet) {
   .arcticmodal-container_i {
     width: 100%;
@@ -243,7 +116,7 @@
     &-form {
       &__header {
         padding: 0 $xs-padding;
-        border-bottom: 1px solid $light-gray;
+        border-bottom: 1px solid #444444;
         &.nb {
           border-bottom: none;
         }

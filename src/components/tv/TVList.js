@@ -4,20 +4,10 @@ import TVListRow from './TVListRow';
 
 const TVList = ({tv}) => {
     return (
-        <div>
-            <h1>Жанры</h1>
-            <table className="table">
-                <thead>
-                <tr>
-                    <th>Name</th>
-                </tr>
-                </thead>
-                <tbody>
-                {tv.map(item =>
-                    <TVListRow key={item.id} item={item} />
-                )}
-                </tbody>
-            </table>
+        <div className={'tv-list'}>
+            {tv.map(item =>
+                <TVListRow key={item.id} item={item} />
+            )}
         </div>
     );
 };

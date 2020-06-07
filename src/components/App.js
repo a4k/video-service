@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Header from "./common/Header";
 import FilmsPage from "./films/FilmsPage";
 import TVPage from "./tv/TVPage";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends React.Component {
     render() {

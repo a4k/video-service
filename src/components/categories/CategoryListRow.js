@@ -4,9 +4,15 @@ import {Link} from "react-router-dom";
 
 const CategoryListRow = ({category}) => {
     return (
-        <tr>
-            <td><Link to={'/categories/' + category.id}>{category.title}</Link></td>
-        </tr>
+        <div className="col-sm-3">
+            <div className={`card text-white category-${category.code}`}>
+                <div className="card-gradient"></div>
+                <div className="card-img"></div>
+                <div className="card-img-overlay">
+                        <h5 className="card-title"><a href={`/category/${category.id}`}>{category.title}</a></h5>
+                    </div>
+            </div>
+        </div>
     );
 };
 
