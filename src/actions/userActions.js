@@ -14,7 +14,15 @@ export function loginUser(user) {
         });
     };
 }
-
+export function updateUser(user) {
+    return function(dispatch) {
+        return UserApi.updateUser(user).then(responseUser => {
+            dispatch(loadUserSuccess(responseUser));
+        }).catch(error => {
+            throw(error);
+        });
+    };
+}
 export function getUserById(id) {
     return function(dispatch) {
         return UserApi.getUserById(id).then(responseUser => {
