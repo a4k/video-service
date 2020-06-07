@@ -274,6 +274,7 @@ header {
 }
 
 .detail {
+  margin-bottom: 48px;
   &-page {
     .back-link {
       background: url('/img/back-link.svg') no-repeat;
@@ -308,6 +309,46 @@ header {
   }
 }
 .comments {
+  &-container {
+    margin-bottom: 56px;
+
+    .comment {
+      &-form {
+        margin-bottom: 16px;
+        &__text {
+          padding-left: 0;
+        }
+        label {
+          display: none;
+        }
+        .form-group {
+          margin-bottom: 0;
+        }
+        textarea.form-control {
+          height: 110px;
+          background: rgba(229, 38, 30, .15);
+          color: $base-color;
+        }
+      }
+      &-list {
+        .comment {
+          margin-bottom: 16px;
+          &-inner {
+            background: #F2F2F2;
+            padding: 16px;
+          }
+          &-user {
+            margin-bottom: 8px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .heading {
+      text-align: center;
+    }
+  }
   .comment {
     .button-delete {
       width: 15px;
