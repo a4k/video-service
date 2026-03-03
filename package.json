@@ -12,7 +12,7 @@
     "gulp-rigger": "^0.5.8",
     "gulp-sass": "^4.1.0",
     "jquery": "^3.5.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.23",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.1",
